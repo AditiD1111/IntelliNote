@@ -43,7 +43,7 @@ function EditiorExtension({editor}) {
        
         const AiModelResult=await chatSession.sendMessage(PROMPT);
         console.log(AiModelResult.response.text());
-       const  FinalAns=AiModelResult.response.text().replace('```','').replace('html','').replace('```','');
+       const FinalAns=AiModelResult.response.text().replace('```','').replace('html','').replace('```','');
 
         const AllText=editor.getHTML();
         editor.commands.setContent(AllText+'<p> <strong>Answer: </strong>'+FinalAns+' </p>');
